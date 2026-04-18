@@ -1,0 +1,43 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python & Environments
+__pycache__/
+*.pyc
+.env
+venv/
+env/
+.venv/
+
+# Datasets & Models
+data/
+models/*.keras
+models/temp_saved_model/
+# Note: We are allowing the lightweight .tflite model to be uploaded so the API can use it!
+
+# Node & React
+frontend/node_modules/
+frontend/dist/
+.DS_Store

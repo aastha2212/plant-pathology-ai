@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2574&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  
+  transition: max-width 0.8s cubic-bezier(0.16, 1, 0.3, 1), gap 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* When preview exists, widen the card and create two columns */
+.glass-card.expanded {
+  max-width: 900px;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.control-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.display-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  animation: fadeSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+h1 { color: #1c1c1e; margin: 0 0 10px 0; font-weight: 800; font-size: 28px; letter-spacing: -0.5px; text-align: center;}
+p { color: #636366; margin-bottom: 25px; line-height: 1.5; text-align: center;}
+.section-label { font-size: 13px; color: #8e8e93; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 12px 0; text-align: center; }
+
+.samples-section { margin-bottom: 25px; padding: 20px; background: rgba(255, 255, 255, 0.6); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.4); }
+.sample-options { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.sample-btn { padding: 10px 16px; border: 1px solid #d1d1d6; border-radius: 10px; background: rgba(255, 255, 255, 0.8); cursor: pointer; transition: 0.2s; font-size: 13px; font-weight: 500; color: #1c1c1e; }
+.sample-btn:hover { background-color: #f2f2f7; }
+.sample-btn.active { border-color: #007aff; background-color: rgba(0, 122, 255, 0.1); color: #007aff; font-weight: 600; }
+
+.upload-area { 
+  border: 2px dashed #c7c7cc; 
+  padding: 25px; 
+  border-radius: 16px; 
+  margin-bottom: 25px; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  background: rgba(255, 255, 255, 0.4);
+}
+.file-input { margin-left: auto; margin-right: auto; }
+
+.analyze-btn { width: 100%; padding: 16px; font-size: 16px; font-weight: 700; color: white; background-color: #007aff; border: none; border-radius: 14px; cursor: pointer; transition: background-color 0.3s; box-shadow: 0 4px 14px rgba(0, 122, 255, 0.3); }
+.analyze-btn:hover { background-color: #0056b3; }
+.analyze-btn:disabled { opacity: 0.5; cursor: not-allowed; box-shadow: none; }
+
+.display-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.display-title { font-size: 14px; font-weight: 600; color: #8e8e93; text-transform: uppercase; letter-spacing: 0.5px; }
+.clear-btn { background: #e5e5ea; border: none; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; color: #8e8e93; cursor: pointer; transition: 0.2s; }
+.clear-btn:hover { background: #ff3b30; color: white; }
+
+.image-preview { width: 100%; height: 260px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-bottom: 20px; }
+
+.error-message { background-color: rgba(255, 59, 48, 0.1); color: #ff3b30; padding: 15px; border-radius: 12px; margin-bottom: 25px; font-size: 14px; font-weight: 500; }
+
+.results-card { padding: 25px; background: rgba(255, 255, 255, 0.9); border-radius: 16px; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid rgba(255,255,255,1); animation: fadeSlideIn 0.5s ease-out forwards; }
+.disease-title { margin: 0 0 15px 0; color: #1c1c1e; font-size: 22px; font-weight: 700;}
+
+.bar-wrap { height: 10px; width: 100%; background: #e5e5ea; border-radius: 5px; overflow: hidden; margin-bottom: 12px; }
+/* The Smooth Progress Animation */
+.bar-fill { height: 100%; transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.5s; }
+
+.confidence-value { font-size: 15px; color: #1c1c1e; font-weight: 600; margin: 0; }
+.warning-txt { margin-top: 15px; font-size: 13px; color: #ff9500; font-weight: 500; }
+
+/* Responsive break for smaller screens */
+@media (max-width: 768px) {
+  .glass-card.expanded { flex-direction: column; max-width: 450px; }
+}

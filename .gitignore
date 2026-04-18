@@ -1,0 +1,13 @@
+# Python & AI Environments
+dl_env/
+__pycache__/
+*.ipynb_checkpoints/
+*.pyc
+
+# React & Node
+frontend/node_modules/
+frontend/dist/
+.env
+
+# OS Files
+.DS_Store

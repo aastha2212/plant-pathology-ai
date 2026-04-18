@@ -1,0 +1,26 @@
+# Ignore the raw dataset (Never upload large data to GitHub!)
+Data/
+PlantVillage/
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore saved heavy model files
+models/*.keras
+models/*.h5
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Python
+dl_env/
+__pycache__/
+*.ipynb_checkpoints/
+
+# React
+frontend/node_modules/
+frontend/dist/
+
+# Env vars
+.env
