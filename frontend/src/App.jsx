@@ -83,7 +83,7 @@ function App() {
     setErrorMsg(null);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/predict", formData, {
+      const response = await axios.post("https://plant-pathology-ai.onrender.com/predict", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setResult(response.data);
